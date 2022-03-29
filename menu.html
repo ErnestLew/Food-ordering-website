@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html prefix="og: http://ogp.me/ns#" lang="en-US ">
+
+<head>
+
+	<title>Food Menu</title>
+
+	<link rel="shortcut icon" href="img/TSR_favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta name="description"
+		content="We sell fried chicken, burgers, and sometimes a lovely brew of coffee." />
+	<meta name="image" content="img/TSR_backdrop.png" />
+
+	<meta property="og:site_name" content="The Silk Road - Culinary Delight" />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
+
+	<meta name="title" content="Main Page">
+	<meta property="og:title" content="Main Page" />
+	<meta name="twitter:title" content="Main Page" />
+	<meta property="og:description"
+		content="We sell fried chicken, burgers, and sometimes a lovely brew of coffee." />
+	<meta name="twitter:description"
+		content="We sell fried chicken, burgers, and sometimes a lovely brew of coffee." />
+
+	<meta property="og:image:width" content="381" />
+	<meta property="og:image:height" content="200" />
+	<meta property="og:image" content="img/TSR_backdrop.png" />
+	<meta name="twitter:image" content="img/TSR_backdrop.png" />
+
+	<meta name="og:url" content="https://the-silk-road.azurewebsites.net" />
+	<meta name="theme-color" content="#FFEF00">
+
+	<meta name="keywords" content="uccd2223 assignment may 2020">
+	<meta name="author" content="Sammy, Yamamoo, Ernest">
+	<meta name="copyright" content="Cytokine Corporations">
+	<meta name="robots" content="index, follow">
+	<meta http-equiv="content-type" content="text/html;UTF-8">
+	<meta http-equiv="content-language" content="en">
+	<meta name="og:locale" content="en_US" />
+	<meta charset="utf-8">
+
+	<!-- Schema.org for Google -->
+	<meta itemprop="name" content="The Silk Road">
+	<meta itemprop="description"
+		content="We sell fried chicken, burgers, and sometimes a lovely brew of coffee." />
+	<meta itemprop="image" content="img/TSR_backdrop.png" />
+
+	<!-- External Files and Plugins -->
+	<link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
+	<link rel="stylesheet" href="css/index.css" />
+	<script src="js/jquery-3.5.1.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+		integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous">
+	</script>
+	<script src="js/bootstrap.js"></script>
+	<script src="js/holder.js"></script>
+
+	<!-- Google Login API -->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="js/googleAPI.js"></script>
+	<meta name="google-signin-client_id"
+		content="505338635145-6s54bgd0oieh9rgmr9tev016255i8t38.apps.googleusercontent.com">
+
+	<style>
+		.jumbotron {
+			color: brown;
+			background-image: url(img/TheSilkRoad_banner.png);
+			background-position: bottom;
+			background-repeat: no-repeat;
+			background-size: cover;
+			height: 50vh;
+		}
+		#alert-add{
+			width: auto;
+			margin-left: 50%;
+			margin-right: auto;
+		}
+        .carousel-item {
+            height: 25rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+        .overlay {
+            width: 100%;
+            height: 100%;
+            background: black;
+            opacity: 0.6;
+            position: absolute;
+        }
+        </style>
+	
+</head>
+
+<body>
+
+	<!-- CSS Bootstrap Theme -->
+	<link id="csstheme" rel="stylesheet" property="stylesheet" href="css/bootstrap-darkly.css">
+
+	<nav id="navbar" class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="index.html">
+			<img src="img/TSR_favicon.ico" width="30" height="30" class="d-inline-block align-top" alt="logo">
+			The Silk Road
+		</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+			aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="menu.html">Menu<span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="about.html">About</a>
+				</li>
+			</ul>
+			<hr>
+			<div id="infoWrapper">
+				<span id="textWrapper" class="text-light text-white-50">
+					Welcome, <span id="userName">Username Here</span>
+				</span>
+				<img id="userImg" class="rounded-circle border border-success" data-toggle="modal"
+					data-target="#UserDetailsModal" src="img/test.png" alt="User Image">
+			</div>
+			<div id="cartWrapper" class="d-flex flex-row justify-content-center align-items-center">
+				<a id="userCart" class="mdi mdi-cart-outline" href="cart.html"></a>
+				<span id="cartNumber" class="badge badge-pill badge-primary">0</span>
+			</div>
+			<div id="gSignInWrapper" class="g-signin2" data-width="GBtnWidth" data-theme="dark" data-onsuccess="onSignIn"></div>
+			<div id="navtheme" class="nav-item dropdown">
+				<button id="navthemeBtn" class="btn btn-block btn-primary nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					Theme
+				</button>
+				<div id="navdropdown" class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="#" id="style01"">Darkly</a>
+					<a class=" dropdown-item" href="#" id="style02"">United</a>
+					<a class=" dropdown-item" href="#" id="style03"">Solar</a>
+					<a class=" dropdown-item" href="#" id="style04"">Vanilla</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- User Details Modal -->
+	<div class="modal fade" id="UserDetailsModal" tabindex="-1" role="dialog" aria-labelledby="exampleModal3Label"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModal3Label">User Details</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="media">
+						<img id="modalImg" class="rounded-circle border border-warning d-flex align-self-start mr-3"
+							src="" alt="User Image">
+						<div class="media-body">
+							<span id="modalID" class="text-break badge badge-warning">ID Here</span>
+							<h5 id="modalName" class="text-break mt-0">Username Here </h5>
+							<p id="modalEmail" class="text-break">Email Here</p>
+							<lead>ID Token</lead>
+							<p id="modalToken" class="overflow-auto border border-secondary p-2 text-break text-monospace d-inline-block" style="height: 15rem;">
+								<small>
+									ID Token Here aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+								</small>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button id="btnSignOut" type="button" class="btn btn-primary" onclick="signOut();">Sign out</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Banner -->
+	<div class="card mt-2">
+		<img class="card-img mt-5" src="img/food_banner.jpg" alt="banner image">
+	</div>
+
+	<blockquote id="quote1" class="blockquote text-center mt-5 mb-5>
+		<p class="mb-0">"Laughter is brightest, where food is best."</p>
+		<footer class="blockquote-footer">
+			<cite title="Source Title">Irish Proverb</cite>
+		</footer>
+	</blockquote>
+
+	<hr class="border border-danger mt-5">
+		<div class="text-center">
+			<div class="display-4">News & Safety</div>
+			<div class="display-5">Please educate yourself & keep everyone safe</div>
+		</div>
+	<hr class="border border-danger">
+
+
+	<div class="container mb-5">
+        <div
+            id="carouselExampleIndicators"
+            class="carousel slide"
+            data-ride="carousel"
+        >
+            <ol class="carousel-indicators">
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="0"
+                    class="active"
+                ></li>
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="1"
+                ></li>
+                <li
+                    data-target="#carouselExampleIndicators"
+                    data-slide-to="2"
+                ></li>
+            </ol>
+            <div class="carousel-inner">
+            <div
+                    style="background-image: url(#)"
+                    class="carousel-item active"
+                >
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>...</h5>
+                        <p>...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div style="background-image: url(#)" class="carousel-item">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>...</h5>
+                        <p>...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+                <div style="background-image: url(#)" class="carousel-item">
+                    <div class="overlay"></div>
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>...</h5>
+                        <p>...</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <a
+                class="carousel-control-prev"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="prev"
+            >
+                <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a
+                class="carousel-control-next"
+                href="#carouselExampleIndicators"
+                role="button"
+                data-slide="next"
+            >
+                <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                ></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+	</div>
+
+	<div class="container">
+		<iframe width="100%" height="480" src="https://www.youtube.com/embed/Zn6ih6mWn1o" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</div>
+	
+	
+	
+	<hr class="border border-danger mt-5">
+		<div class="text-center">
+			<div class="display-4">Featured</div>
+		</div>
+	<hr class="border border-danger">
+
+	<!-- Food Category -->
+	<div class="container mt-5">
+		<div class="row align-items-center m-3 mb-5">
+			<div class="col">
+				<h5 class="mt-0 mb-1">Crispy Fried Chicken <span class="badge badge-success"><span class="mdi mdi-chef-hat"></span> Recommanded</span></h5>
+				<p class="text-justify">
+					Southern style, traditional, and other variations, we serve the crispiest fried chicken you can ever find. Comes with a collection of homemade dip sauces which includes: Ranch Dressing, Worchesterchire Ketchup, Spicy Mustard Mayo and Cheesy Nacho Sauce.
+				</p>
+				<a class="btn btn-info" href="#cat0"">Go to Category</a>
+			</div>
+			<div class="col-md-auto text-center">
+				<img id="imgcat" class="p-3" src="img/products/chickencat.jpg" alt="chicken" style="height:250px;width:auto">
+			</div>
+		</div>
+		<div class="row align-items-center  m-3 text-justify mb-5">
+			<div class="col">
+				<h5 class="mt-0 mb-1">Burgers and Sliders <span class="badge badge-warning">Hot!</span></h5>
+				<p class="text-justify">
+					Grilled in a charcoal fired environment, our burger and patties are enfused with a distinct smokey flavour that will improve your overall experience. Every purchase are served with a handful of side slim potato fries or curly crisp fries of your choice.
+				</p>
+				<a class="btn btn-info" href="#cat1"">Go to Category</a>
+			</div>
+			<div class="col-md-auto text-center">
+				<img id="imgcat" class="p-3" src="img/products/burgercat.jpg" alt="burger" style="height:250px;width:auto">
+			</div>
+		</div>
+		<div class="row align-items-center  m-3 text-justify mb-5">
+			<div class="col">
+				<h5 class="mt-0 mb-1">Cup of Joe <span class="badge badge-secondary"><span class="mdi mdi-thumb-up"></span> Popular</span></h5>
+				<p class="text-justify">
+					Served in either freshly hot or cold brewed, our coffee are bench pressed from imported arabica coffee beans, hand-crafted by our experienced barista. Optionally, you may request a personal deviations or favors to suit your taste.
+				</p>
+				<a class="btn btn-info" href="#cat2"">Go to Category</a>
+			</div>
+			<div class="col-md-auto text-center">
+				<img id="imgcat" class="p-3" src="img/products/coffeecat.jpg" alt="coffee" style="height:250px;width:auto">
+			</div>
+		</div>
+	</div>
+
+	
+
+	<hr class="border border-danger">
+	<div class="text-center">
+		<div class="display-4">Our Delightful Menu</div>
+	</div>
+	<hr class="border border-danger">
+
+	<!-- Menu Cards -->
+	<div id="cardMenuWrapper" class="m-3">
+		<div id ="cat0" class="text-center mt-5 mb-5">
+			<div class="lead mt-5"><span class="border border-success rounded p-2">Fried Chicken and Dips</span></div>
+		</div>
+		<div id ="cat1" class="text-center mt-5 mb-5">
+			<div class="lead mt-5"><span class="border border-success rounded p-2">Technically Sandwiches</span></div>
+		</div>
+		<div id ="cat2" class="text-center mt-5 mb-5">
+			<div class="lead mt-5"><span class="border border-success rounded p-2">Freshly Brewed Coffee</span></div>
+		</div>
+	</div>
+
+	<!-- Cart Add Alert -->
+	<div id="alert-add" class="toast m-3 fixed-bottom">
+		<div class="toast-header d-flex flex-wrap align-content-center text-success">
+			<span class="mdi mdi-check-decagram mr-2" style="font-size:1.25rem"></span>
+			Success!
+		</div>
+		
+		<div class="toast-body text-info"></div>
+	</div>
+
+	<hr class="border border-danger mt-5">
+		<div class="text-center">
+			<div class="display-4">Stall Location</div>
+			<div class="display-5">Just to remind you where you can find us!</div>
+		</div>
+	<hr class="border border-danger">
+
+	<div class="container-fluid">
+		<div class="row m-2 justify-content-center">
+			<div class="col-sm-12 col-md-12 col-lg-8 d-flex justify-content-center mb-3">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248.24374411962853!2d100.3848102!3d5.4321722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304ac4f836881441%3A0x831afd91c9a1701d!2sKompleks%20Makan%20Taman%20Sin%20Tatt!5e0!3m2!1sen!2sus!4v1599394515986!5m2!1sen!2sus" width="100%" height="560" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			</div>
+		</div>
+	</div>
+
+	<footer class="bg-dark">
+		<div class="container-fluid pt-2 text-white">
+			<div class="row">
+				<div class="col">
+					<div class="text-center">
+						<p>All Rights Reserved &copy 2020</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/app.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/news.js"></script>
+	<script>
+		$(document).ready(()=>{
+			for (let i = 0; i < 3; i++) {
+        		var jsonsrc ="";
+        		switch (i) {
+            		case 0:
+                		jsonsrc="JSON/fchicken.JSON";
+                		break;
+            		case 1:
+                		jsonsrc="JSON/burger.JSON"
+               			break;
+            		case 2:
+                		jsonsrc="JSON/coffee.JSON"
+                		break;
+        	}
+        	if (localStorage.getItem("cat" + i) == null) {
+           		$.getJSON(jsonsrc, (jd) => {
+                	localStorage.setItem("cat" + i, JSON.stringify(jd));
+                	cardAppend("cat" + i, i)
+            	});
+        	} else {
+            	cardAppend("cat" + i, i)
+       		}
+    	}
+
+    	function cardAppend(header, k) {
+        	var data = JSON.parse(localStorage.getItem("cat"+k));
+        	$("#" + header).after(
+            	'<div class="container-fluid mt-2 mb-5">' +
+                '<div id="' +
+                header +
+                "row" +
+                '" class="row mb-3"></div></div>'
+       		);
+        	for (let i = 0; i < data.length; i++) {
+            	$("#" + header + "row").append(
+                	`<div class="col d-flex justify-content-around mt-3 mb-3">
+                	<div class="flip-card"><div class="flip-card-inner">
+                	<div class="flip-card-front"><img src="${data[i].imgsrc}" alt="food image" style="width: 100%;height: 100%;"></div>
+                	<div class="flip-card-back bg-dark p-3"><h3 class="mt-4">${data[i].name}</h3>
+                	<p>${data[i].desc}</p>
+                	<div class="fixed-bottom text-center mt-4"><h3>RM${data[i].price}</h3>
+                	<button id="enabled" type="button" class="m-2 btn btn-outline-primary mt-2 mb-4" data-name="${data[i].name}" data-price="${data[i].price}" data-id="${data[i].id}" disabled>Sign In to Order</button>
+                	</div></div></div></div></div>`
+            	);
+        	}
+    	}
+	})
+	</script>
+
+	<!--Start of Tawk.to Script-->
+	<script type="text/javascript">
+		var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+		(function(){
+			var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+			s1.async=true;
+			s1.src='https://embed.tawk.to/5f58940b4704467e89ed6563/default';
+			s1.charset='UTF-8';
+			s1.setAttribute('crossorigin','*');
+			s0.parentNode.insertBefore(s1,s0);
+		})();
+	</script>
+	<!--End of Tawk.to Script-->
+
+</body>
+
+</html>
